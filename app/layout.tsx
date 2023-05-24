@@ -1,3 +1,5 @@
+import ClientJust from "./components/ClientJust";
+import Modal from "./components/modal/Modal";
 import Navbar from "./components/navbar/Navbar";
 import "./globals.css";
 import { Nunito } from "next/font/google";
@@ -17,7 +19,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
+        <ClientJust>
+          <Modal isOpen={true} />
+          <Navbar />
+        </ClientJust>
+
         {children}
       </body>
     </html>
