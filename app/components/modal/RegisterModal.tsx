@@ -32,20 +32,20 @@ const RegisterModal = () => {
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     setIsLoading(true);
-    toast.success("Registered!");
-    // axios
-    //   .post("/api/register", data)
-    //   .then(() => {
-    //     toast.success("Registered!");
-    //     // registerModal.onClose();
-    //     // loginModal.onOpen();
-    //   })
-    //   .catch((error) => {
-    //     toast.error(error);
-    //   })
-    //   .finally(() => {
-    //     setIsLoading(false);
-    //   });
+
+    axios
+      .post("/api/register", data)
+      .then(() => {
+        toast.success("Registered!");
+        // registerModal.onClose();
+        // loginModal.onOpen();
+      })
+      .catch((error) => {
+        toast.error(error);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
   };
 
   //   const onToggle = useCallback(() => {
