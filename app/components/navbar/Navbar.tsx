@@ -6,7 +6,11 @@ import Logo from "./Logo";
 import Search from "./Search";
 import UserMenu from "./UserMenu";
 
-const Navbar = () => {
+interface NavBarProps {
+  currentUser?: any;
+}
+
+const Navbar = ({ currentUser }: NavBarProps) => {
   return (
     <div className="fixed w-full bg-white z-10 shadow-sm ">
       <div
@@ -28,8 +32,7 @@ const Navbar = () => {
           >
             <Logo />
             <Search />
-            <UserMenu />
-            
+            <UserMenu currentUser={currentUser} />
           </div>
         </Container>
       </div>
